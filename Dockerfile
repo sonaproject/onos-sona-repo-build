@@ -7,6 +7,10 @@ ENV HOME /root
 ENV BUILD_NUMBER docker
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 
+# Set the jar class PATH
+RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 && \
+	update-alternatives --set jar "${JAVA_HOME}/bin/jar"
+
 # Install dependencies
 RUN \
   apt-get update && \
