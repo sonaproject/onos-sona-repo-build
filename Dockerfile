@@ -14,7 +14,7 @@ RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 
 # Install dependencies
 RUN \
   apt-get update && \
-  apt-get install -y zip unzip bzip2 git
+  apt-get install -y zip unzip bzip2 git git-review
 
 # Install Python
 RUN \
