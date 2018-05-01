@@ -26,10 +26,3 @@ RUN pip install -U "virtualenv==1.11.4"
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo
 RUN chmod a+x /bin/repo
 
-# Copy in the source
-RUN mkdir -p /src/
-WORKDIR /src
-RUN repo init -u https://github.com/sonaproject/onos-sona-repo.git
-RUN repo sync
-RUN echo "export ONOS_ROOT=/src" > ~/.bash_profile
-RUN . ~/.bash_profile
