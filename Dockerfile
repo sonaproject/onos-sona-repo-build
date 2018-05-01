@@ -1,4 +1,4 @@
-# First stage is the build environment
+# Use Oracle JDK-8 as the default build environment
 FROM sgrio/java-oracle:jdk_8 as builder
 MAINTAINER Jian Li <gunine@sk.com>
 
