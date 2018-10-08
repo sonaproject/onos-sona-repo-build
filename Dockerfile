@@ -6,6 +6,7 @@ MAINTAINER Jian Li <gunine@sk.com>
 ENV HOME /root
 ENV BUILD_NUMBER docker
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+ENV BAZEL_VERSION 0.15.2
 
 # Set the jar class PATH
 RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 && \
@@ -14,7 +15,10 @@ RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 
 # Install dependencies
 RUN \
   apt-get update && \
-  apt-get install -y zip unzip bzip2 git git-review
+  apt-get install -y zip unzip bzip2 git git-review build-essential && \
+	curl -L -o bazel.sh https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh && \
+  chmod +x bazel.sh && \
+  ./bazel.sh --user
 
 # Install Python
 RUN \
@@ -25,4 +29,3 @@ RUN pip install -U "virtualenv==1.11.4"
 
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo
 RUN chmod a+x /bin/repo
-
