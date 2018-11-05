@@ -19,7 +19,7 @@ RUN \
 	curl -L -o bazel.sh https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh && \
   chmod +x bazel.sh && \
   ./bazel.sh --user && \
-  ln -s /root/.bazel/bin/bazel /bin/bazel
+  mv /root/.bazel/bin/* /bin/
 
 # Install Python
 RUN \
