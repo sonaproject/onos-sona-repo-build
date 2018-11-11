@@ -1,5 +1,5 @@
 # Use Oracle JDK-8 as the default build environment
-FROM sgrio/java-oracle:jdk_10 as builder
+FROM sgrio/java-oracle:jdk_9 as builder
 MAINTAINER Jian Li <gunine@sk.com>
 
 # Set the environment variables
