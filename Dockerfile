@@ -1,12 +1,12 @@
 # Use Oracle JDK-8 as the default build environment
-FROM sgrio/java-oracle:jdk_8 as builder
+FROM sgrio/java-oracle:jdk_10 as builder
 MAINTAINER Jian Li <gunine@sk.com>
 
 # Set the environment variables
 ENV HOME /root
 ENV BUILD_NUMBER docker
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-ENV BAZEL_VERSION 0.15.2
+ENV BAZEL_VERSION 0.19.0
 
 # Set the jar class PATH
 RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 && \
