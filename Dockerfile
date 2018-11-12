@@ -18,7 +18,7 @@ RUN \
   apt-get install -y zip unzip bzip2 git git-review build-essential && \
 	curl -L -o bazel.sh https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh && \
   chmod +x bazel.sh && \
-  ./bazel.sh --useri && \
+  ./bazel.sh --user && \
   ln -s /root/bin/bazel /bin/bazel
 
 # Install Python
