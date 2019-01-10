@@ -15,7 +15,7 @@ RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 
 # Install dependencies
 RUN \
   apt-get update && \
-  apt-get install -y zip unzip bzip2 git git-review build-essential && \
+  apt-get install -y zip unzip bzip2 git git-review build-essential cpio && \
 	curl -L -o bazel.sh https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh && \
   chmod +x bazel.sh && \
   ./bazel.sh --user && \
