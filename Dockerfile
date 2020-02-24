@@ -1,5 +1,5 @@
 # Use Oracle JDK-8 as the default build environment
-FROM sgrio/java-oracle:jdk_8 as builder
+FROM opensona/java-oracle:jdk_8 as builder
 MAINTAINER Jian Li <gunine@sk.com>
 
 # Set the environment variables
@@ -24,7 +24,7 @@ RUN \
 # Install Python
 RUN \
   apt-get update && \
-  apt-get install -y python2.7 python2.7-dev python-pip && \
+  apt-get install -y python3.6 python3.6-dev python-pip && \
   rm -rf /var/lib/apt/lists/*
 RUN pip install -U "virtualenv==1.11.4"
 
