@@ -6,7 +6,7 @@ MAINTAINER Jian Li <gunine@sk.com>
 ENV HOME /root
 ENV BUILD_NUMBER docker
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-ENV BAZEL_VERSION 2.0.0
+ENV BAZEL_VERSION 1.2.1
 
 # Set the jar class PATH
 RUN update-alternatives --install "/usr/bin/jar" "jar" "${JAVA_HOME}/bin/jar" 1 && \
